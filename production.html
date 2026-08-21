@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tài liệu sản xuất — nội bộ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* Internal crew tooling. Deliberately plain: this is an Operate surface for
+       three people who already know what they are looking for, and it must never
+       borrow the public sheet world or be mistaken for it. */
+    :root {
+      --giay: #F2E7D3; --muc: #1A1512; --muc-mo: #574A3C;
+      --do: #C8100A; --vien: #D8C9AC; --o: #FFFFFF;
+      --chu: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; padding: clamp(1.25rem, 4vw, 3rem);
+      font-family: var(--chu); color: var(--muc); background: var(--giay);
+      line-height: 1.6;
+    }
+    ::selection { background: var(--muc); color: var(--giay); }
+    :where(a, button):focus-visible { outline: 3px solid var(--do); outline-offset: 3px; }
+    .noi-bo {
+      max-width: 78ch; margin: 0 auto 2.5rem;
+      border: 2px solid var(--do); padding: 1rem 1.2rem;
+    }
+    .noi-bo p { margin: 0; font-weight: 700; }
+    .noi-bo a { color: var(--do); }
+    main { max-width: 78ch; margin: 0 auto; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; letter-spacing: -.03em; margin: 0 0 .4rem; }
+    .phu { margin: 0 0 2.5rem; color: var(--muc-mo); max-width: 62ch; }
+    h2 {
+      font-size: 1.15rem; font-weight: 900; letter-spacing: .04em; text-transform: uppercase;
+      margin: 3rem 0 1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--muc);
+    }
+    article { border-top: 1px solid var(--vien); padding: 1.25rem 0; }
+    article h3 { margin: 0 0 .6rem; font-size: 1rem; font-weight: 900; }
+    .prompt, .sfx { margin: 0; white-space: pre-wrap; font-size: .95rem; max-width: 70ch; }
+    .prompt { background: var(--o); border: 1px solid var(--vien); padding: .9rem 1rem; }
+    button {
+      min-height: 44px; margin-top: .8rem; padding: .6rem 1.1rem;
+      font: inherit; font-weight: 700; color: var(--giay); background: var(--muc);
+      border: none; cursor: pointer;
+    }
+    button:hover { background: var(--do); }
+    button:active { transform: translateY(2px); }
+    table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    th, td { text-align: left; vertical-align: top; padding: .7rem .6rem; border-bottom: 1px solid var(--vien); }
+    th { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+    td:first-child { font-weight: 700; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="noi-bo">
+    <p>Trang nội bộ cho ê-kíp sản xuất. Không nằm trong trải nghiệm công khai —
+       xem <a href="index.html">index.html</a> để tới trang dành cho người xem.</p>
+  </div>
+
+  <main>
+    <h1>Tài liệu sản xuất</h1>
+    <p class="phu">Prompt dựng video AI và bảng cue âm thanh, tách khỏi trang công khai.
+       Nội dung đọc từ <code>production-data.js</code> — tách khỏi gói dữ liệu công khai nên người xem không bao giờ tải phải.</p>
+
+    <h2>Prompt cho công cụ AI video</h2>
+    <div id="prompts"></div>
+
+    <h2>Bảng cue âm thanh (SFX &amp; foley)</h2>
+    <table>
+      <thead><tr><th scope="col">Phân đoạn</th><th scope="col">Cue</th></tr></thead>
+      <tbody id="sfx"></tbody>
+    </table>
+  </main>
+
+  <script src="production-data.js"></script>
+  <script>
+    const oPrompt = document.getElementById("prompts");
+    const oSfx = document.getElementById("sfx");
+
+    PRODUCTION_DATA.forEach((c) => {
+      const a = document.createElement("article");
+      const h = document.createElement("h3");
+      h.textContent = c.title;
+      const p = document.createElement("p");
+      p.className = "prompt";
+      p.textContent = c.aiPrompt;
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = "Sao chép prompt";
+      b.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(c.aiPrompt);
+          b.textContent = "Đã sao chép";
+        } catch {
+          b.textContent = "Không sao chép được — hãy bôi đen và copy tay";
+        }
+        setTimeout(() => { b.textContent = "Sao chép prompt"; }, 2600);
+      });
+      a.append(h, p, b);
+      oPrompt.appendChild(a);
+
+      const tr = document.createElement("tr");
+      const td1 = document.createElement("td");
+      td1.textContent = c.title.replace(/^(\d+)\..*/, "Phân đoạn $1");
+      const td2 = document.createElement("td");
+      td2.textContent = c.sfxCue;
+      tr.append(td1, td2);
+      oSfx.appendChild(tr);
+    });
+  </script>
+</body>
+</html>

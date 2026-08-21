@@ -3,414 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CPD Safety Shield - Phân Cảnh & Video Storyboard Điện Ảnh</title>
-  <meta name="description" content="Trình phát Storyboard điện ảnh và kịch bản video công nghệ Cảnh báo Trẻ em trên xe (CPD) với âm thanh đa tầng, camera động và prompt AI video chuyên nghiệp.">
+  <meta name="theme-color" content="#9C4A22">
+
+  <title>20 phút — chuyện xảy ra khi một đứa trẻ bị bỏ quên trong xe</title>
+  <meta name="description" content="Máy tắt lúc 12 giờ 40. Hai mươi phút sau, khoang xe chạm 38°C. Đây là những gì chiếc xe tự làm khi không ai nghe điện thoại — công nghệ Phát hiện Trẻ em trên xe (CPD).">
+
+  <!-- og:url and the two image URLs must become absolute on the real host;
+       several link scrapers, Zalo's included, refuse relative paths. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:url" content="./">
+  <meta property="og:title" content="20 phút — chuyện xảy ra khi một đứa trẻ bị bỏ quên trong xe">
+  <meta property="og:description" content="Máy tắt lúc 12 giờ 40. Hai mươi phút sau, khoang xe chạm 38°C. Đây là những gì chiếc xe tự làm khi không ai nghe điện thoại.">
+  <meta property="og:image" content="assets/images/share-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Người bảo vệ nhìn qua khe kính xe hở 2 phân giữa bãi đỗ xe nắng gắt.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="20 phút — chuyện xảy ra khi một đứa trẻ bị bỏ quên trong xe">
+  <meta name="twitter:description" content="Máy tắt lúc 12 giờ 40. Hai mươi phút sau, khoang xe chạm 38°C.">
+  <meta name="twitter:image" content="assets/images/share-card.jpg">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23C8100A'/%3E%3Ctext x='16' y='24' font-family='sans-serif' font-size='20' font-weight='900' fill='%23F2E7D3' text-anchor='middle'%3E20%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="assets/images/share-card.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/scene1.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Chuyển đến nội dung chính</a>
-  <div class="app-container">
-    <!-- Top Glass Navigation Bar -->
-    <header class="main-header">
-      <div class="brand-group">
-        <div class="logo-badge" title="Hệ thống Phát hiện Trẻ em CPD">
-          <span class="logo-monogram">CPD</span>
-        </div>
-        <div class="brand-text">
-          <span class="brand-eyebrow">CHILD PRESENCE DETECTION / CONTROL ROOM</span>
-          <div class="title-row">
-            <h1 class="project-title">CPD SAFETY SYSTEM</h1>
-            <span class="tag-badge">CINEMATIC 4K</span>
-            <span class="status-live-badge">
-              <span class="live-dot"></span> SẴN SÀNG PHÁT
-            </span>
-          </div>
-          <p class="project-subtitle">Phân cảnh điện ảnh 8 phân đoạn & Bộ công cụ sản xuất Video AI (Child Presence Detection)</p>
-        </div>
-      </div>
+<!--
+  THESIS: Time you tear off and cannot get back. Twenty minutes as calendar sheets
+  leaving the stack one by one. Refuses the automotive hero-video-plus-sensor-overlay
+  arrangement this project itself shipped.
+  OWN-WORLD: Lịch bloc, the Vietnamese tear-off day calendar. Flood colour as a field,
+  never a tint: a burnt-ochre-to-vermilion heat ramp at constant luminance, newsprint
+  sheet, binding holes, torn perforation, colossal tabular numeral, dense almanac
+  micro-type. Gold only where the car acts.
+  STORY: A parent understands that twenty minutes is shorter than they think, and that
+  the car acts when every human link fails. They check their own car.
+  FIRST VIEWPORT: One full-bleed ochre sheet, read in calendar order: dateline, then
+  the colossal 00:00, then the statement naming the child, the scene photograph in the
+  illustration block, the almanac opening on who is in the cabin. The primary action —
+  the CPD self-check — lives on the final sheet, the one that does not tear.
+  FORM: Lịch bloc, candidate 6 of the grounded list, seed key 3f8625cb.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+-->
+  <a class="bo-qua" href="#noi-dung">Chuyển đến nội dung chính</a>
 
-      <!-- Live Audio Wave Indicator -->
-      <div class="audio-wave-container" id="audio-wave-container" title="Trạng thái âm thanh thời gian thực">
-        <div class="wave-bar bar-1"></div>
-        <div class="wave-bar bar-2"></div>
-        <div class="wave-bar bar-3"></div>
-        <div class="wave-bar bar-4"></div>
-        <div class="wave-bar bar-5"></div>
-      </div>
-
-      <div class="header-actions">
-        <button id="toggle-sound-btn" class="action-btn sound-btn active" title="Bật / Tắt hiệu ứng âm thanh kỹ thuật số (Web Audio API)">
-          <svg class="icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.08"></path>
-          </svg>
-          <span id="sound-btn-text">Âm Thanh: BẬT</span>
-        </button>
-
-        <button id="toggle-vo-btn" class="action-btn vo-btn" title="Bật / Tắt thuyết minh lồng tiếng tiếng Việt tự động">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-            <line x1="12" y1="19" x2="12" y2="23"></line>
-            <line x1="8" y1="23" x2="16" y2="23"></line>
-          </svg>
-          <span id="vo-btn-text">Thuyết Minh AI: TẮT</span>
-        </button>
-
-        <button id="fullscreen-btn" class="action-btn icon-only" title="Chế độ toàn màn hình điện ảnh (F11)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
-          </svg>
-        </button>
-      </div>
-    </header>
-
-    <section class="page-overview" aria-labelledby="workspace-title">
-      <div class="overview-copy">
-        <div class="breadcrumb" aria-label="Đường dẫn dự án">
-          <span>Dự án</span>
-          <span aria-hidden="true">/</span>
-          <strong>CPD Safety Film</strong>
-        </div>
-        <h2 id="workspace-title">Bảng điều khiển sản xuất video</h2>
-        <p>Quản lý storyboard, kịch bản, prompt AI và thiết kế âm thanh trong một không gian làm việc.</p>
-      </div>
-      <dl class="overview-stats" aria-label="Tổng quan dự án">
-        <div class="overview-stat">
-          <dt>Phân cảnh</dt>
-          <dd>08</dd>
-        </div>
-        <div class="overview-stat">
-          <dt>Thời lượng</dt>
-          <dd>01:45</dd>
-        </div>
-        <div class="overview-stat">
-          <dt>Định dạng</dt>
-          <dd>4K · 16:9</dd>
-        </div>
-        <div class="overview-stat status-stat">
-          <dt>Trạng thái</dt>
-          <dd><span class="status-indicator"></span>Sẵn sàng</dd>
-        </div>
-      </dl>
-    </section>
-
-    <!-- Main Content Grid -->
-    <main class="main-layout" id="main-content">
-      <!-- Left: Cinema Video Player Viewport -->
-      <section class="cinema-section">
-        <div class="section-heading">
-          <div>
-            <span class="section-eyebrow">LIVE PREVIEW</span>
-            <h2>Storyboard player</h2>
-          </div>
-          <p>Tự động chuyển cảnh · 8 keyframes</p>
-        </div>
-        <div class="screen-frame" id="cinema-frame">
-          <!-- Cinema 16:9 Canvas / Image Container -->
-          <div class="viewport-canvas" id="viewport-canvas">
-            <img id="scene-image" class="scene-img kenburns-active" src="assets/images/scene1.jpg" alt="Scene Still" />
-            
-            <!-- Cinematic Vignette & Color Grade Overlay -->
-            <div class="cinematic-lens-overlay"></div>
-
-            <!-- Big Glowing Center Play Button (Shown when paused) -->
-            <div class="center-play-overlay" id="center-play-overlay">
-              <button class="big-play-btn" id="big-play-btn" aria-label="Bắt đầu xem video điện ảnh">
-                <span class="btn-ripple"></span>
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </button>
-              <div class="center-play-hint">Nhấp để xem Video Storyboard (Tự động chuyển cảnh & Âm thanh)</div>
-            </div>
-            
-            <!-- Live CPD Telemetry HUD Overlay -->
-            <div class="telemetry-hud" id="telemetry-hud">
-              <div class="hud-top-bar">
-                <div class="hud-glass-badge alert-badge" id="hud-status-chip">
-                  <span class="hud-pulse-dot"></span>
-                  <span id="hud-status-text">CPD ARMED • GIÁM SÁT NGẦM</span>
-                </div>
-                <div class="hud-glass-badge temp-badge" id="hud-temp-chip">
-                  <span class="temp-indicator-icon">🌡️</span>
-                  <span id="hud-temp-val">32°C</span>
-                  <div class="temp-mini-bar"><div class="temp-mini-fill" id="temp-mini-fill" style="width: 35%;"></div></div>
-                </div>
-                <div class="hud-glass-badge cabin-badge">
-                  <span class="cabin-icon">👶</span>
-                  <span>CABIN: <strong id="hud-occupant-val">1 EM BÉ (GHẾ SAU)</strong></span>
-                </div>
-              </div>
-
-              <!-- Radar Target Reticle -->
-              <div class="hud-center-graphic" id="hud-radar-scan">
-                <div class="radar-sweep"></div>
-                <div class="radar-crosshair-h"></div>
-                <div class="radar-crosshair-v"></div>
-                <div class="target-marker" id="hud-target-marker">
-                  <span class="target-bracket top-left"></span>
-                  <span class="target-bracket top-right"></span>
-                  <span class="target-bracket btm-left"></span>
-                  <span class="target-bracket btm-right"></span>
-                  <span class="target-label" id="hud-target-label">RADAR 60GHz • TARGET #01</span>
-                </div>
-              </div>
-
-              <div class="hud-bottom-bar">
-                <div class="hud-stat-box">
-                  <span class="stat-label">CƠ CHẾ PHẢN ỨNG</span>
-                  <span class="stat-value" id="hud-mitigation-val">Chờ tín hiệu</span>
-                </div>
-                <div class="hud-stat-box">
-                  <span class="stat-label">KÍNH THOÁT KHÍ NÓNG</span>
-                  <span class="stat-value" id="hud-window-val">0 cm (Đóng kín)</span>
-                </div>
-                <div class="hud-stat-box">
-                  <span class="stat-label">CÒI BÁO ĐỘNG NGOẠI VI</span>
-                  <span class="stat-value" id="hud-horn-val">Chế độ im lặng</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Urgent Phone Notification Simulation Modal (Scene 3) -->
-            <div class="phone-alert-overlay" id="phone-alert-modal">
-              <div class="phone-modal-card">
-                <div class="phone-header">
-                  <div class="phone-app-badge">
-                    <span class="bell-icon">🔔</span> SMART CAR CONNECT • KHẨN CẤP
-                  </div>
-                  <span class="phone-time">VỪA XONG</span>
-                </div>
-                <div class="phone-body">
-                  <div class="alert-badge-red">⚠️ BÁO ĐỘNG CPD CẤP ĐỘ 5 (38°C)</div>
-                  <h4 class="phone-alert-title">Phát hiện trẻ em trong khoang xe đóng kín!</h4>
-                  <p class="phone-alert-desc">Nhiệt độ đã chạm ngưỡng nguy hiểm <strong>38°C</strong>. Hệ thống kích hoạt hạ kính 2cm & còi cứu hộ ngoại vi.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Subtitles Floating Container -->
-            <div class="subtitles-container" id="subtitles-container">
-              <div class="subtitle-box" id="subtitle-box">
-                <div class="subtitle-top-info">
-                  <span class="scene-counter-tag" id="subtitle-scene-badge">PHÂN ĐOẠN 01 / 08</span>
-                  <div class="subtitle-controls">
-                    <button class="sub-ctrl-btn" id="sub-lang-toggle" title="Chuyển đổi: Song ngữ / Chỉ Tiếng Việt / Chỉ Tiếng Anh">Song Ngữ (VN/EN)</button>
-                    <button class="sub-ctrl-btn" id="sub-font-toggle" title="Tăng / Giảm cỡ chữ phụ đề">Cỡ Chữ: Vừa</button>
-                  </div>
-                </div>
-                <p class="subtitle-text-vn" id="subtitle-vn">Ánh nắng ban trưa đổ dồn xuống bãi đỗ xe ngoài trời như thiêu như đốt...</p>
-                <p class="subtitle-text-en" id="subtitle-en">The blazing midday sun beats down mercilessly on the outdoor parking lot...</p>
-              </div>
-            </div>
-
-            <!-- Letterbox Bars for 2.39:1 Cinema Scope -->
-            <div class="letterbox-bar letterbox-top"></div>
-            <div class="letterbox-bar letterbox-bottom"></div>
-          </div>
-
-          <!-- Video Controls Toolbar -->
-          <div class="player-controls-bar">
-            <!-- Timeline Scrubber -->
-            <div class="timeline-slider-container" id="timeline-slider" title="Nhấp vào để tua nhanh phân cảnh">
-              <div class="timeline-track">
-                <div class="timeline-fill" id="timeline-fill"></div>
-                <div class="timeline-thumb" id="timeline-thumb"></div>
-              </div>
-              <div class="timeline-markers" id="timeline-markers">
-                <!-- 8 Scene Markers populated by JS -->
-              </div>
-            </div>
-
-            <div class="controls-row">
-              <div class="left-controls">
-                <button id="prev-btn" class="ctrl-btn" title="Phân cảnh trước (Phím: Mũi tên trái)">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
-                </button>
-                <button id="play-pause-btn" class="ctrl-btn play-btn" title="Phát / Tạm dừng (Phím: Space)">
-                  <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                </button>
-                <button id="next-btn" class="ctrl-btn" title="Phân cảnh tiếp theo (Phím: Mũi tên phải)">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="m6 18 8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
-                </button>
-                <button id="replay-btn" class="ctrl-btn" title="Phát lại từ đầu">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
-                </button>
-                <div class="time-display">
-                  <span id="current-time">00:00</span> / <span id="total-time">01:45</span>
-                </div>
-              </div>
-
-              <div class="center-scene-title">
-                <span class="badge-live">LIVE</span>
-                <span id="active-scene-title" class="scene-name">1. Bãi Đỗ Xe Nắng Gắt & Vội Vã</span>
-              </div>
-
-              <div class="right-controls">
-                <div class="speed-selector">
-                  <label for="speed-select">Tốc độ:</label>
-                  <select id="speed-select">
-                    <option value="0.75">0.75x</option>
-                    <option value="1" selected>1.0x Chuẩn</option>
-                    <option value="1.25">1.25x</option>
-                    <option value="1.5">1.5x</option>
-                  </select>
-                </div>
-                <button id="toggle-hud-btn" class="ctrl-pill-btn active" title="Bật / Tắt giao diện cảm biến HUD">
-                  <span class="pill-dot"></span> HUD AR
-                </button>
-                <button id="toggle-aspect-btn" class="ctrl-pill-btn" title="Chuyển đổi tỷ lệ 16:9 / 2.39:1 Cinema Scope">2.39:1</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Thumbnails Strip -->
-        <div class="thumbnail-strip-wrapper">
-          <div class="strip-header">
-            <div class="strip-header-title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
-              <span>8 PHÂN CẢNH ĐIỆN ẢNH (KEYFRAMES)</span>
-            </div>
-            <span class="strip-hint">Nhấp vào từng khung hình để chuyển phân đoạn</span>
-          </div>
-          <div class="thumbnail-strip" id="thumbnail-strip">
-            <!-- Rendered by JS -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Right: Story Director Studio & AI Video Generator Prompts -->
-      <section class="director-studio-section">
-        <div class="studio-titlebar">
-          <span class="section-eyebrow">PRODUCTION ASSETS</span>
-          <h2>Không gian biên tập</h2>
-          <p>Kịch bản, prompt hình ảnh, âm thanh và thông số CPD.</p>
-        </div>
-        <!-- Modern Pill Tabs -->
-        <div class="studio-tabs" role="tablist" aria-label="Bộ công cụ đạo diễn">
-          <button class="tab-btn active" data-tab="script-tab" role="tab" aria-selected="true" aria-controls="script-tab">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            Phân Cảnh
-          </button>
-          <button class="tab-btn" data-tab="ai-prompts-tab" role="tab" aria-selected="false" aria-controls="ai-prompts-tab">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-            Prompt AI Video
-          </button>
-          <button class="tab-btn" data-tab="sound-fx-tab" role="tab" aria-selected="false" aria-controls="sound-fx-tab">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-            Âm Thanh & Lồng Tiếng
-          </button>
-          <button class="tab-btn" data-tab="tech-cpd-tab" role="tab" aria-selected="false" aria-controls="tech-cpd-tab">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            Công Nghệ CPD
-          </button>
-        </div>
-
-        <div class="studio-tab-content">
-          <!-- TAB 1: SCRIPT -->
-          <div class="tab-pane active" id="script-tab" role="tabpanel">
-            <div class="pane-header flex-between">
-              <div>
-                <h3>KỊCH BẢN ĐẠO DIỄN CHI TIẾT (8 PHÂN ĐOẠN)</h3>
-                <p>Khung thời gian, chỉ dẫn góc máy, cảm xúc và thoại kịch tính.</p>
-              </div>
-              <button id="copy-script-text-btn" class="secondary-btn" title="Sao chép toàn bộ văn bản kịch bản">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                Sao Chép Kịch Bản
-              </button>
-            </div>
-
-            <!-- Quick Filter in Script -->
-            <div class="search-filter-box">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-              <input type="text" id="script-search-input" placeholder="Tìm kiếm nội dung phân cảnh, lời thoại hoặc sự kiện..." />
-            </div>
-
-            <div class="scenes-list-container" id="scenes-script-list">
-              <!-- Rendered by JS -->
-            </div>
-          </div>
-
-          <!-- TAB 2: AI PROMPTS -->
-          <div class="tab-pane" id="ai-prompts-tab" role="tabpanel">
-            <div class="pane-header flex-between">
-              <div>
-                <h3>PROMPT SẴN SÀNG CHO CÁC CÔNG CỤ AI VIDEO</h3>
-                <p>Tối ưu hóa cho <strong>Runway Gen-3</strong>, <strong>Kling AI 1.5</strong>, <strong>Luma Dream Machine</strong>, <strong>Sora</strong>, và <strong>Midjourney v6.1</strong>.</p>
-              </div>
-              <button id="copy-all-prompts-btn" class="primary-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                Sao Chép Toàn Bộ 8 Prompt
-              </button>
-            </div>
-            <div class="prompts-grid" id="prompts-container">
-              <!-- Rendered by JS -->
-            </div>
-          </div>
-
-          <!-- TAB 3: SOUND FX & VO -->
-          <div class="tab-pane" id="sound-fx-tab" role="tabpanel">
-            <div class="pane-header">
-              <h3>BẢNG THIẾT KẾ ÂM THANH (SFX & FOLEY CUE SHEET)</h3>
-              <p>Hướng dẫn phối âm thanh đa tầng cho người dựng phim trên CapCut / DaVinci Resolve.</p>
-            </div>
-            <div class="sfx-table-wrapper" id="sfx-table-container">
-              <!-- Rendered by JS -->
-            </div>
-          </div>
-
-          <!-- TAB 4: TECH CPD -->
-          <div class="tab-pane" id="tech-cpd-tab" role="tabpanel">
-            <div class="pane-header">
-              <h3>KIẾN TRÚC 5 TẦNG BẢO VỆ CỦA HỆ THỐNG CPD</h3>
-              <p>Tiêu chuẩn an toàn ô tô quốc tế Euro NCAP & NHTSA 2025</p>
-            </div>
-            <div class="cpd-tech-breakdown">
-              <div class="cpd-diagram-card">
-                <div class="level-badge">TẦNG 1: QUAN SÁT & KÍCH HOẠT NGẦM</div>
-                <h4>Cảm biến mmWave Radar 60GHz & Camera Cabin AI</h4>
-                <p>Ngay khi tắt máy và tài xế mở cửa, radar quét nhịp thở vi mô (micro-respiration) và cử động nhỏ nhất của trẻ sơ sinh dưới chăn hoặc ghế trẻ em.</p>
-              </div>
-              <div class="cpd-diagram-card warning">
-                <div class="level-badge warning">TẦNG 2: CẢNH BÁO NỘI VI (30 Giây)</div>
-                <h4>Âm thanh Ting... Ting... dồn dập & Taplo nhấp nháy</h4>
-                <p>Nhắc nhở trực diện trước khi người lái rời bước. Đèn taplo biểu tượng ghế trẻ em phát sáng đỏ cam.</p>
-              </div>
-              <div class="cpd-diagram-card alert">
-                <div class="level-badge alert">TẦNG 3: CẢNH BÁO TỪ XA QUA ỨNG DỤNG (20 Phút Leo Thang)</div>
-                <h4>Gửi thông báo khẩn cấp + Ảnh trực tiếp qua 4G/5G</h4>
-                <p>Gửi tin nhắn ưu tiên cao vượt qua chế độ DND/Mute trên smartphone người thân kèm đo nhiệt độ phòng lái thời gian thực.</p>
-              </div>
-              <div class="cpd-diagram-card danger">
-                <div class="level-badge danger">TẦNG 4: GIẢM THIỂU TAI HỌA NHIỆT ĐỘ (38°C Threshold)</div>
-                <h4>Hạ kính 2cm + Quạt thông gió làm mát công suất cực đại</h4>
-                <p>Ngăn chặn hiệu ứng nhà kính trong khoang xe đóng kín, tạo lối thoát nhiệt khí nóng, giảm 6-8°C tức thì để kéo dài thời gian an toàn.</p>
-              </div>
-              <div class="cpd-diagram-card emergency">
-                <div class="level-badge emergency">TẦNG 5: CỨU HỘ CỘNG ĐỒNG (Còi Ngoại Vi Đứt Quãng)</div>
-                <h4>Còi xe rú từng hồi Bíp... Bíp... Bíp + Đèn Hazard nháy sáng</h4>
-                <p>Gây chú ý mạnh mẽ cho bảo vệ, người đi đường và khu vực xung quanh khi tài xế không phản hồi điện thoại, cứu mạng đứa trẻ kịp thời.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast" role="status" aria-live="polite">
-      <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-      <span id="toast-text">Đã sao chép vào bộ nhớ tạm!</span>
-    </div>
+  <div class="dieu-khien" role="group" aria-label="Điều khiển">
+    <button type="button" id="nut-tieng-anh" class="nut-tron" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M3 5h18v14H3z"/><path d="M6 15h6M15 15h3"/>
+      </svg>
+      <span id="nhan-tieng-anh">English subtitles</span>
+    </button>
+    <button type="button" id="nut-am-thanh" class="nut-tron" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M11 5 6 9H2v6h4l5 4V5z"/>
+        <path class="song-am" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>
+        <path class="dau-tat" d="M15.5 9.5l5 5m0-5l-5 5"/>
+      </svg>
+      <span id="nhan-am-thanh">Bật tiếng</span>
+    </button>
+    <button type="button" id="nut-tu-chay" class="nut-tron" aria-pressed="false" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path class="bieu-tuong-dung" d="M7 5h3v14H7zM14 5h3v14h-3z"/>
+        <path class="bieu-tuong-chay" d="M8 5v14l11-7z"/>
+      </svg>
+      <span id="nhan-tu-chay">Tự chạy</span>
+    </button>
   </div>
 
+  <main id="noi-dung" class="bloc" tabindex="-1">
+
+    <!-- Sheet 1 ships in the markup so the thesis paints before app.js runs.
+         app.js rebuilds its almanac from scenes.js so the two cannot diverge. -->
+    <section class="to" data-to="1" data-nhiet="32" style="--nen: var(--do-32)" aria-labelledby="cau-mo">
+      <div class="to-giay">
+        <div class="dinh-ghim" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <p class="ngay-thang">Bãi đỗ xe ngoài trời · 12:40 trưa</p>
+
+        <div class="con-so">
+          <span class="chu-so">00:00</span>
+          <span class="don-vi">phút</span>
+        </div>
+
+        <h1 class="tieu-de-to" id="cau-mo">Máy vừa tắt. Trong xe còn một đứa trẻ.</h1>
+
+        <figure class="khoi-hinh">
+          <picture>
+            <source srcset="assets/images/scene1.webp" type="image/webp">
+            <img src="assets/images/scene1.jpg" width="1600" height="900" decoding="async" fetchpriority="high"
+                 alt="Một chiếc SUV đỗ giữa bãi xe bê tông dưới nắng trưa gay gắt, hơi nóng bốc lên loang loáng trên mặt đường.">
+          </picture>
+        </figure>
+
+        <dl class="lich-nien">
+          <div><dt>Trong khoang</dt><dd>1 EM BÉ (GHẾ SAU)</dd></div>
+          <div><dt>Nhiệt độ khoang</dt><dd>32°C</dd></div>
+          <div><dt>Kính xe</dt><dd>0 cm (Đóng kín)</dd></div>
+          <div><dt>Còi ngoại vi</dt><dd>Im lặng</dd></div>
+        </dl>
+
+        <p class="loi-thoai" data-vai="cue">Ánh nắng ban trưa đổ dồn xuống bãi đỗ xe ngoài trời như thiêu như đốt.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <noscript>
+    <div class="khong-script">
+      <h2>Toàn bộ tám phân đoạn</h2>
+      <ol>
+        <li>
+          <h3>1. Bãi Đỗ Xe Nắng Gắt &amp; Vội Vã</h3>
+          <p>Ánh nắng ban trưa đổ dồn xuống bãi đỗ xe ngoài trời như thiêu như đốt. Vừa tắt máy, hệ thống Phát hiện Trẻ em (CPD) lập tức kích hoạt ngầm. Người bố vì áp lực cuộc họp khẩn nên hoàn toàn không để ý cảnh báo nhấp nháy trên taplo.</p>
+          <p lang="en">The midday sun scorches down relentlessly upon the open concrete lot. As the engine cuts out, the Child Presence Detection (CPD) silently arms itself. Rushing to an urgent meeting, the father overlooks the blinking dash warning.</p>
+        </li>
+        <li>
+          <h3>2. Camera Cabin &amp; Quét Radar Ghế Sau</h3>
+          <p>Trong xe, camera nhận diện đứa bé vẫn đang ngủ quên ở hàng ghế sau. Tín hiệu cảnh báo ban đầu phát ra chuỗi âm thanh ting... ting... ting... dồn dập suốt 30 giây rồi tắt. Sau 2 phút im lặng, cơ chế cảnh báo leo thang 20 phút chính thức vận hành.</p>
+          <p lang="en">Inside, the in-cabin camera scans the sleeping toddler in the child seat. Initial acoustic chimes pulse for 30 seconds. After 2 minutes of silence, the 20-minute multi-stage escalation protocol initiates.</p>
+        </li>
+        <li>
+          <h3>3. Chiếc Điện Thoại Im Lìm Trong Phòng Họp</h3>
+          <p>Thế nhưng, chiếc điện thoại đã bị tắt tiếng hoàn toàn, nằm im lìm trên bàn phòng họp kín. Không ai hay biết điều nguy hiểm gì đang chuẩn bị xảy ra bên dưới bãi xe.</p>
+          <p lang="en">However, the smartphone sits completely muted on the closed boardroom conference table. Absorbed in the intense presentation, no one notices the silent red emergency alerts.</p>
+        </li>
+        <li>
+          <h3>4. Nhiệt Độ Đạt 38°C - Cơ Chế Tự Vệ Kích Hoạt</h3>
+          <p>Đến đợt cảnh báo thứ 5, nhiệt độ trong khoang xe đóng kín đã chạm ngưỡng 38°C. Cảm biến nhiệt lập tức kích hoạt lớp bảo vệ khẩn cấp: kính xe rít nhẹ hạ xuống 2 cm ở một bên để thoát khí nóng, quạt điều hòa gầm lên tối đa!</p>
+          <p lang="en">By the 5th warning cycle, the cabin temp hits 38°C. Thermal sensors trigger the emergency mitigation: the side window lowers 2cm to vent searing air, and the AC blower roars to max capacity.</p>
+        </li>
+        <li>
+          <h3>5. Người Bảo Vệ Phát Hiện Qua Khe Kính 2cm</h3>
+          <p>Tiếng còi inh ỏi xé toạc không gian bãi xe khiến người bảo vệ chú ý. Chạy lại gần, nhìn qua khe kính hở 2cm, ông hoảng hốt thấy đứa bé đang giãy giụa khóc ngặt nghẽo bên trong.</p>
+          <p lang="en">The piercing horn cuts across the lot, alerting the security guard. Rushing over and peering through the 2cm opening, he recoils in shock seeing the toddler crying inside.</p>
+        </li>
+        <li>
+          <h3>6. Cánh Cửa Phòng Họp Bật Mở &amp; Cơn Hoảng Loạn</h3>
+          <p>“Xe ai biển số 51H-... mau xuống bãi đỗ xe! Có đứa bé bị kẹt trong xe đang gào khóc kìa!” Cả phòng họp sững sờ. Mặt người bố cắt không còn giọt máu, anh bật dậy hất tung chiếc ghế, vứt vội tài liệu rồi lao như bay xuống cầu thang.</p>
+          <p lang="en">'Whose car is 51H-...? Hurry down to the lot! There's a child trapped crying inside!' The room freezes. Blood drains from the father's face; he knocks over his chair and bolts down the stairwell.</p>
+        </li>
+        <li>
+          <h3>7. Cứu Con Trong Nước Mắt &amp; Lời Xin Lỗi</h3>
+          <p>Giữa bãi xe nắng rát, tiếng còi báo động xen lẫn tiếng khóc nghẹn ngào của con trẻ như bóp nghẹt tim anh. Giật tung cánh cửa, anh bế thốc con vào lòng, toàn thân run rẩy khi mồ hôi và nước mắt đứa bé ướt đẫm vai áo mình.</p>
+          <p lang="en">In the blazing heat, the siren intertwined with his child's weeping tears at his soul. Yanking open the door, he pulls his child into a trembling embrace, tears and sweat soaking his shoulder.</p>
+        </li>
+        <li>
+          <h3>8. Tổng Kết Công Nghệ CPD Bảo Vệ Sinh Mạng</h3>
+          <p>Hệ thống Phát hiện Trẻ em (CPD) kết hợp mmWave Radar 60GHz, camera quang học, cơ chế hạ kính thoát nhiệt và còi báo động ngoại vi — lá chắn công nghệ âm thầm bảo vệ những sinh mệnh quý giá nhất.</p>
+          <p lang="en">The Child Presence Detection (CPD) system blends 60GHz mmWave radar, optical AI vision, thermal glass venting, and community audible alarms — a silent high-tech shield protecting our most precious lives.</p>
+        </li>
+      </ol>
+      <p class="cot-in">Phim ngắn dàn dựng. Hình ảnh minh họa do AI tạo.</p>
+    </div>
+  </noscript>
+
   <script src="audioEngine.js"></script>
+  <script src="scenes.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

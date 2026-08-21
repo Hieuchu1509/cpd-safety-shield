@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-21T00:00:00Z",
+  "title": "Design System: 20 phút — Lịch Bloc",
+  "extensions": {
+    "colorMeta": {
+      "do-32": {
+        "role": "primary",
+        "displayName": "Sun-Baked Ochre",
+        "canonical": "#9C4A22",
+        "tonalRamp": ["#2A1309", "#43200E", "#5C2C14", "#7A3A1B", "#9C4A22", "#C06A3C", "#D9986F", "#F0CDB4"]
+      },
+      "do-34": {
+        "role": "primary",
+        "displayName": "Scorched Terracotta",
+        "canonical": "#B03A18",
+        "tonalRamp": ["#2E0F06", "#4A180A", "#66210E", "#8B2D13", "#B03A18", "#D25732", "#E68F72", "#F7C8B7"]
+      },
+      "do-35": {
+        "role": "primary",
+        "displayName": "Kiln Red",
+        "canonical": "#B4351A",
+        "tonalRamp": ["#2F0E06", "#4C160A", "#69200E", "#8F2A13", "#B4351A", "#D65334", "#E98C73", "#F8C7B8"]
+      },
+      "do-36": {
+        "role": "primary",
+        "displayName": "Signal Vermilion",
+        "canonical": "#BE2812",
+        "tonalRamp": ["#320A04", "#511107", "#70180A", "#98200E", "#BE2812", "#E0452C", "#F0846C", "#FBC4B5"]
+      },
+      "do-38": {
+        "role": "primary",
+        "displayName": "Emergency Red",
+        "canonical": "#C8100A",
+        "tonalRamp": ["#340403", "#550705", "#750906", "#9E0C08", "#C8100A", "#EC3226", "#F67A70", "#FDC0BA"]
+      },
+      "vang": {
+        "role": "tertiary",
+        "displayName": "Warning Gold",
+        "canonical": "#F2B233",
+        "tonalRamp": ["#3D2A05", "#5F4208", "#82590B", "#B37B10", "#F2B233", "#F5C463", "#F9D896", "#FCEDCB"]
+      },
+      "giay": {
+        "role": "neutral",
+        "displayName": "Newsprint",
+        "canonical": "#F2E7D3",
+        "tonalRamp": ["#2A2318", "#443A28", "#5E5138", "#8A7856", "#B5A17C", "#D4C4A6", "#F2E7D3", "#FAF5EB"]
+      },
+      "muc": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1A1512",
+        "tonalRamp": ["#0D0B09", "#1A1512", "#2E2721", "#463C33", "#6B5C4F", "#958574", "#C2B5A5", "#E8E0D5"]
+      },
+      "muc-mo": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "#574A3C",
+        "tonalRamp": ["#171310", "#241E18", "#3A3128", "#574A3C", "#786957", "#9C8C78", "#C4B6A2", "#E6DDCE"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Colossal Numeral", "purpose": "The calendar date slot. Minutes on story sheets, layers on layer sheets. Size multiplied by --co, which ramps 1 → 1.22 with cabin heat. Always tabular." },
+      "headline": { "displayName": "Closing Statement", "purpose": "The final sheet's one sentence. 16ch max, balanced." },
+      "title": { "displayName": "Sheet Statement", "purpose": "One sentence per sheet, 26ch max (20ch pivot, 28ch layer). h1 steps to 900 on sheet 1." },
+      "body": { "displayName": "Cue / Reading Copy", "purpose": "The live subtitle channel and the final sheet's copy. 68ch measure, reserved min-height so cue changes never reflow." },
+      "label": { "displayName": "Dateline / Almanac Key", "purpose": "Uppercase tracked micro-type: the calendar masthead line, the numeral's unit, almanac keys." },
+      "datum": { "displayName": "Almanac Value", "purpose": "Telemetry values, 700 weight, tabular so temperatures align down the column." }
+    },
+    "shadows": [
+      { "name": "bong", "value": "0 2px 4px rgba(26, 21, 18, .16), 0 14px 34px rgba(26, 21, 18, .24)", "purpose": "The only shadow in the system. Two components carry it: the illustration block and the fixed controls — the two things sitting on the sheet rather than being part of it." }
+    ],
+    "motion": [
+      { "name": "ra", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "The single easing curve. Every animation and transition uses it." },
+      { "name": "dat-to", "value": "translateY(-1.4%) rotate(-.45deg) → none, .95s", "purpose": "The authored moment: the torn sheet settling onto the stack. Runs on the live sheet's content." },
+      { "name": "xe-giay", "value": "scaleY(2.1) opacity .45 → none, .8s, transform-origin top center", "purpose": "The perforation opening as the sheet is torn. Paired with dat-to." },
+      { "name": "chuyen-nen", "value": "background-color .7s var(--ra)", "purpose": "Ground crossfade between heat steps on html and on each sheet." },
+      { "name": "chuyen-trang-thai", "value": "transform .18s var(--ra), background-color .18s var(--ra)", "purpose": "Button hover and press response." }
+    ],
+    "breakpoints": [
+      { "name": "hep", "value": "max-width: 620px" },
+      { "name": "rong-tro-chuot", "value": "min-width: 901px and (pointer: fine)" },
+      { "name": "cham", "value": "hover: none" }
+    ],
+    "delivery": [
+      { "name": "cuon", "value": "coarse pointer / phone", "purpose": "Scroll-driven. Reader advances sheets; proximity snap assists. No timer." },
+      { "name": "tu-chay", "value": "min-width: 901px and (pointer: fine), motion allowed", "purpose": "Timed autoplay with loop. Mandatory snap. Yields permanently on the first user wheel or touch." },
+      { "name": "nhip-cue", "value": "15 cps, 2800ms floor, sheet = sum(cues) + 1200ms", "purpose": "Sheet dwell derives from cue reading time, never from the authored film duration." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Sheet",
+      "kind": "custom",
+      "refersTo": "sheet",
+      "description": "The signature component. One tear-off calendar sheet per viewport: punched binding holes, torn perforation, dateline, colossal numeral.",
+      "html": "<section class=\"ds-to\" data-nhiet=\"38\"><div class=\"ds-to-giay\"><div class=\"ds-dinh-ghim\" aria-hidden=\"true\"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class=\"ds-ngay-thang\">Đợt cảnh báo thứ 5 · xe tự hành động</p><div class=\"ds-con-so ds-con-so-lon\"><span class=\"ds-chu-so\">20:00</span><span class=\"ds-don-vi\">phút</span></div><h2 class=\"ds-tieu-de-to\">Nhiệt độ chạm 38°C. Chiếc xe tự hành động.</h2></div></section>",
+      "css": ".ds-to { position: relative; background: #C8100A; color: #F2E7D3; font-family: \"Be Vietnam Pro\", ui-sans-serif, system-ui, sans-serif; padding: clamp(2.5rem, 6vw, 4.75rem) clamp(1.25rem, 5vw, 3.5rem) clamp(1.25rem, 5vw, 3.5rem); } .ds-to::before { content: \"\"; position: absolute; inset: 0 0 auto 0; height: 19px; background: #C8100A; filter: brightness(.82); -webkit-mask-image: radial-gradient(circle at 7px 0, transparent 6px, #000 6.5px); mask-image: radial-gradient(circle at 7px 0, transparent 6px, #000 6.5px); -webkit-mask-size: 9px 19px; mask-size: 9px 19px; -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x; } .ds-to-giay { max-width: 78ch; margin-inline: auto; display: grid; gap: clamp(1rem, 2.5vw, 1.75rem); } .ds-dinh-ghim { display: flex; justify-content: center; gap: clamp(1rem, 4vw, 2.5rem); margin-bottom: .5rem; } .ds-dinh-ghim i { width: 9px; height: 9px; border-radius: 50%; background: rgba(26,21,18,.34); box-shadow: inset 0 1px 1px rgba(26,21,18,.5); } .ds-ngay-thang { margin: 0; font-size: clamp(.82rem, 1.7vw, .95rem); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid rgba(242,231,211,.3); padding-bottom: .7rem; } .ds-con-so { display: flex; align-items: baseline; gap: clamp(.5rem, 1.6vw, 1rem); } .ds-chu-so { font-size: calc(clamp(4.5rem, 19vw, 11rem) * 1.22); font-weight: 900; line-height: .82; letter-spacing: -.04em; font-variant-numeric: tabular-nums; font-feature-settings: \"tnum\" 1; } .ds-con-so-lon .ds-chu-so { color: #F2B233; } .ds-don-vi { font-size: clamp(.95rem, 2.4vw, 1.4rem); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; } .ds-tieu-de-to { margin: 0; font-size: clamp(1.5rem, 3.8vw, 2.4rem); font-weight: 700; line-height: 1.18; letter-spacing: -.02em; text-wrap: balance; max-width: 26ch; }"
+    },
+    {
+      "name": "Almanac",
+      "kind": "custom",
+      "refersTo": "almanac-cell",
+      "description": "The calendar's ephemeris block. Four telemetry rows; the first always names who is in the cabin. On the acting sheet the keys reverse into a solid gold field.",
+      "html": "<dl class=\"ds-lich-nien ds-xe-hanh-dong\"><div><dt>Trong khoang</dt><dd>1 EM BÉ (GHẾ SAU)</dd></div><div><dt>Nhiệt độ khoang</dt><dd>38°C</dd></div><div><dt>Kính xe</dt><dd>2 cm (Đã hạ)</dd></div><div><dt>Còi ngoại vi</dt><dd>Đang kêu</dd></div></dl>",
+      "css": ".ds-lich-nien { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1px; background: rgba(242,231,211,.26); border: 1px solid rgba(242,231,211,.34); font-family: \"Be Vietnam Pro\", ui-sans-serif, system-ui, sans-serif; } .ds-lich-nien > div { background: #C8100A; padding: .85rem clamp(.6rem, 1.6vw, 1.1rem); display: grid; gap: .35rem; align-content: start; } .ds-lich-nien dt { font-size: .8rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #F2E7D3; } .ds-lich-nien dd { margin: 0; font-size: clamp(.95rem, 2vw, 1.08rem); font-weight: 700; line-height: 1.3; font-variant-numeric: tabular-nums; color: #F2E7D3; } .ds-lich-nien.ds-xe-hanh-dong dt { background: #F2B233; color: #1A1512; padding: .18em .5em; margin: -.18em -.5em .1em; justify-self: start; }"
+    },
+    {
+      "name": "Share Button",
+      "kind": "button",
+      "refersTo": "button-share",
+      "description": "The final sheet's share action. Emergency Red ground, square, 56px, label doubles as the status channel.",
+      "html": "<button type=\"button\" class=\"ds-nut-chia-se\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 3v13M12 3 7.5 7.5M12 3l4.5 4.5\"/><path d=\"M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5\"/></svg><span>Gửi cho một người bố, người mẹ khác</span></button>",
+      "css": ".ds-nut-chia-se { min-height: 56px; display: inline-flex; align-items: center; gap: .7rem; padding: .9rem 1.4rem; font-family: \"Be Vietnam Pro\", ui-sans-serif, system-ui, sans-serif; font-weight: 700; color: #F2E7D3; background: #C8100A; border: none; border-radius: 0; cursor: pointer; text-align: left; transition: transform .18s cubic-bezier(.16,1,.3,1), background-color .18s cubic-bezier(.16,1,.3,1); } .ds-nut-chia-se svg { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; } .ds-nut-chia-se:hover { background: #BE2812; } .ds-nut-chia-se:active { transform: translateY(2px); } .ds-nut-chia-se:focus-visible { outline: 3px solid #1A1512; outline-offset: 2px; box-shadow: 0 0 0 6px #F2B233; border-radius: 2px; }"
+    },
+    {
+      "name": "Control Toggle",
+      "kind": "button",
+      "refersTo": "button-control",
+      "description": "The fixed bottom-right control stack. Newsprint ground with the system's only shadow; the on-state inverts to ink and is always paired with aria-pressed.",
+      "html": "<button type=\"button\" class=\"ds-nut-tron\" aria-pressed=\"false\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M11 5 6 9H2v6h4l5 4V5z\"/><path d=\"M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13\"/></svg><span>Bật tiếng</span></button>",
+      "css": ".ds-nut-tron { min-height: 48px; display: inline-flex; align-items: center; gap: .55rem; padding: .7rem 1.05rem; font-family: \"Be Vietnam Pro\", ui-sans-serif, system-ui, sans-serif; font-size: .88rem; font-weight: 700; color: #1A1512; background: #F2E7D3; border: none; border-radius: 0; cursor: pointer; box-shadow: 0 2px 4px rgba(26,21,18,.16), 0 14px 34px rgba(26,21,18,.24); transition: transform .18s cubic-bezier(.16,1,.3,1), background-color .18s cubic-bezier(.16,1,.3,1); } .ds-nut-tron svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; } .ds-nut-tron:hover { background: #fff; } .ds-nut-tron:active { transform: translateY(2px); } .ds-nut-tron[aria-pressed=\"true\"] { background: #1A1512; color: #F2E7D3; } .ds-nut-tron:focus-visible { outline: 3px solid #1A1512; outline-offset: 2px; box-shadow: 0 0 0 6px #F2B233; border-radius: 2px; }"
+    },
+    {
+      "name": "Skip Link",
+      "kind": "nav",
+      "refersTo": "skip-link",
+      "description": "Off-screen until focused, then slides down from the top edge. 44px target, newsprint on ink.",
+      "html": "<a class=\"ds-bo-qua\" href=\"#noi-dung\">Chuyển đến nội dung chính</a>",
+      "css": ".ds-bo-qua { position: absolute; top: 0; left: 50%; transform: translate(-50%, -140%); padding: .9rem 1.5rem; min-height: 44px; display: grid; place-items: center; background: #F2E7D3; color: #1A1512; font-family: \"Be Vietnam Pro\", ui-sans-serif, system-ui, sans-serif; font-weight: 700; text-decoration: none; border-radius: 0; transition: transform .28s cubic-bezier(.16,1,.3,1); } .ds-bo-qua:focus { transform: translate(-50%, 0); outline: 3px solid #1A1512; outline-offset: 2px; box-shadow: 0 0 0 6px #F2B233; }"
+    },
+    {
+      "name": "Illustration Block",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "The sheet's photograph slot. 16:9, never covered by type, carrying the system's only shadow. Falls back to the scene's alt text as centred copy if the fetch fails.",
+      "html": "<figure class=\"ds-khoi-hinh ds-hinh-loi\"><p class=\"ds-loi-hinh\">Một chiếc SUV đỗ giữa bãi xe bê tông dưới nắng trưa gay gắt, hơi nóng bốc lên loang loáng trên mặt đường.</p></figure>",
+      "css": ".ds-khoi-hinh { margin: 0; position: relative; aspect-ratio: 16 / 9; background: rgba(26,21,18,.22); border-radius: 0; box-shadow: 0 2px 4px rgba(26,21,18,.16), 0 14px 34px rgba(26,21,18,.24); } .ds-khoi-hinh img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; } .ds-khoi-hinh.ds-hinh-loi { display: grid; place-items: center; padding: clamp(1rem, 2.5vw, 1.75rem); background: rgba(26,21,18,.34); } .ds-loi-hinh { margin: 0; max-width: 42ch; text-align: center; font-family: \"Be Vietnam Pro\", ui-sans-serif, system-ui, sans-serif; font-weight: 700; color: #F2E7D3; }"
+    },
+    {
+      "name": "Cue Channel",
+      "kind": "custom",
+      "refersTo": "sheet",
+      "description": "The live subtitle line. aria-live polite, reserved min-height so cue changes never reflow the sheet, optional English track beneath.",
+      "html": "<p class=\"ds-loi-thoai\" role=\"status\" aria-live=\"polite\" aria-atomic=\"true\">Đến đợt cảnh báo thứ 5, nhiệt độ trong khoang xe đóng kín đã chạm ngưỡng 38°C.</p><span class=\"ds-loi-en\" lang=\"en\">By the 5th warning cycle, the cabin temp hits 38°C.</span>",
+      "css": ".ds-loi-thoai { margin: 0; max-width: 68ch; font-family: \"Be Vietnam Pro\", ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.05rem, 2.4vw, 1.22rem); line-height: 1.65; min-height: 3.4em; color: #F2E7D3; } .ds-loi-en { display: block; max-width: 68ch; font-family: \"Be Vietnam Pro\", ui-sans-serif, system-ui, sans-serif; font-size: clamp(.92rem, 2vw, 1.02rem); line-height: 1.55; color: #F2E7D3; opacity: .88; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lịch Bloc — the tear-off day calendar you cannot put back",
+    "overview": "The surface is a Vietnamese wall calendar block. Every screen is one sheet that was pulled off the sheet above it: punched binding holes at the top, a torn perforation edge, a dateline, and a colossal tabular numeral that dominates the page the way a calendar's date does. Time is the material. The reader tears through twenty minutes and the sheets get hotter as they go.\n\nColour arrives as a flood field, never as a tint or an overlay. A sheet is one solid ochre-to-vermilion ground with newsprint type on it; there is no gradient, no glass, no scrim, no card floating on a background. Depth exists in exactly two places — the illustration block, which sits on the sheet with a soft double shadow, and the fixed controls, which use the same shadow to sit above the stack. Everything else is flat by construction.\n\nThe system is deliberately austere in inventory: one type family in three weights, nine colours, one animation, square corners everywhere. The escalation the story needs is carried by four coordinated channels rather than by adding new components — the ground steps up the heat ramp, the numeral grows via --co, the torn edge coarsens, and the acting sheet reverses its almanac labels into gold.",
+    "keyCharacteristics": [
+      "Full-bleed single-colour sheet grounds; no cards, no panels, no overlays",
+      "Square corners as an absolute (0 radius everywhere except the 2px focus ring and the circular binding holes)",
+      "One family (Be Vietnam Pro) at 400 / 700 / 900, chosen for complete Vietnamese diacritic coverage",
+      "A colossal tabular numeral as the fixed anchor of every sheet",
+      "Gold reserved for one meaning only",
+      "One authored motion moment; the resolved state is the default"
+    ],
+    "rules": [
+      { "name": "The No-Alpha-Type Rule", "body": "Sheet type is never alpha-mixed. Hierarchy comes from weight and size only. An earlier build tinted secondary copy and measured 3.36:1 on the hottest sheet; opacity on type is banned outright on a sheet ground. Opacity remains available for non-type material and for the stopped numeral's deliberate .72 dimming, which is checked against its own ground.", "section": "colors" },
+      { "name": "The Flood Field Rule", "body": "Colour is a field, never a tint. A sheet has exactly one ground colour edge to edge. No gradients, no scrims, no colour overlays on imagery.", "section": "colors" },
+      { "name": "The Gold-Means-Acting Rule", "body": "Gold marks only the moment the car acts, and only in two forms: as large-text colour on the numeral (3.17:1, clearing the 3:1 large-text floor) or as a solid field behind ink (9.65:1). Gold is never used as small text on a sheet ground, where it measures 1.53:1.", "section": "colors" },
+      { "name": "The Tracking Floor Rule", "body": "Negative tracking is reserved for the 900-weight display sizes and stops at -.04em. Anything uppercase or under ~1rem tracks positive (.04em to .16em); nothing small is ever tracked tighter than normal, because Vietnamese diacritics need the sidebearings.", "section": "typography" },
+      { "name": "The Tabular Numerals Rule", "body": "Every figure that can change between sheets — the colossal numeral and every almanac value — is set with tabular figures. Numbers must not shift horizontally when a sheet advances.", "section": "typography" },
+      { "name": "The Clock Tells The Truth Rule", "body": "The numeral stays on the clock for all eight story sheets and visibly stops at 20:00 once the car acts, rather than inventing times the specs never set. Stopped sheets dim the numeral to .72 and append '· đã dừng' to the unit. Layer sheets count layers, not minutes — the clock slot is never reused for a second meaning.", "section": "typography" },
+      { "name": "The Nothing Hides Rule", "body": "No breakpoint removes meaning. The almanac reflows from an auto-fit grid to a two-column key/value list, but all four rows survive at every width and the occupant row stays first. The only things that disappear are the fixed controls and the skip link, and only in print.", "section": "layout" },
+      { "name": "The Two-Shadow Rule", "body": "--bong is the only shadow in the system, and only two components carry it. Anything that is part of a sheet is flat; only things sitting on a sheet cast.", "section": "elevation" },
+      { "name": "The Perforation Rule", "body": "The top of every sheet is a repeated radial-gradient mask over a brightness(.82) copy of the sheet ground — the tear. It coarsens with heat: 14px tall on 14px pitch at 32°, then 15/13, 16/12, 17/11, and 19px tall on 9px pitch at 38°. The final sheet's perforation is removed entirely, because it is the sheet that does not tear.", "section": "elevation" },
+      { "name": "The Anatomy Order Rule", "body": "Sheet parts appear in the order binding holes, dateline, numeral, statement, illustration, almanac, cue — or not at all. A sheet may omit an image or an almanac; it may not reorder them. The numeral is never below the statement.", "section": "components" },
+      { "name": "The Occupant-First Rule", "body": "The almanac's first row always names who is in the cabin. It is the row that says a child is in there; it is never dropped, never reordered, and never collapsed at any breakpoint.", "section": "components" },
+      { "name": "The Press-Down Rule", "body": "Buttons respond to :active with translateY(2px) and a background step, never with a shadow change. Under hover: none, hover backgrounds are reverted to their rest values so a tap does not leave a stuck state.", "section": "components" },
+      { "name": "The Resolved-Default Rule", "body": "The whole keyframe block sits inside @media (prefers-reduced-motion: no-preference), and both keyframes end at the untransformed state. A sheet that never animates is still correct. Reduced motion is honoured twice — in CSS and again in JS.", "section": "components" },
+      { "name": "The Reader Wins Rule", "body": "Autoplay yields on the first user scroll. A wheel or touchstart the engine did not itself cause turns autoplay off and updates the control's label and aria-pressed. Autoplay never re-arms itself.", "section": "components" },
+      { "name": "The Cue-Derived Duration Rule", "body": "A sheet's dwell time is computed from its cue reading time, never from the authored film duration. Cues run at 15 characters per second with a 2800ms floor, and a sheet holds the sum of its cues plus 1200ms.", "section": "components" },
+      { "name": "The Non-Inheriting Rule", "body": "The production surface must never adopt sheets, perforations, colossal numerals, the heat ramp, or gold — and the public surface must never adopt its tables, its #D8C9AC border, or its plain-document layout. If the two ever converge, one of them is wrong.", "section": "components" }
+    ],
+    "dos": [
+      "Do ground every new surface in one flood colour from the heat ramp, edge to edge, chosen from the data rather than picked by eye.",
+      "Do give any new sheet the full anatomy in order: binding holes, dateline, numeral, statement, illustration, almanac, cue.",
+      "Do put every changeable figure in tabular numerals.",
+      "Do carry hierarchy with weight (400/700/900) and size, never with opacity on type.",
+      "Do reserve space for anything that changes in place — the cue paragraph's min-height and the images' intrinsic dimensions exist so nothing reflows mid-read.",
+      "Do keep new corners square, and new borders to 1px alpha hairlines (or the 3px ink rule when a section break must be loud).",
+      "Do honour reduced motion in both layers: any new animation goes inside @media (prefers-reduced-motion: no-preference) and must end at the untransformed state.",
+      "Do pair every toggle's visual on-state with aria-pressed and a label that changes with it."
+    ],
+    "donts": [
+      "Don't alpha-mix type on a sheet ground. Ever.",
+      "Don't use gold for anything but the car acting, and never as small text on a sheet ground.",
+      "Don't add a second type family; the Vietnamese diacritic coverage is why there is one.",
+      "Don't add a shadow to anything that is part of a sheet. --bong belongs to the illustration block and the controls only.",
+      "Don't hide a row, a label, or a value at a narrow breakpoint. Reflow it.",
+      "Don't invent a time, a temperature, or a telemetry value. The numeral stops at 20:00 rather than filling in numbers the specs never set.",
+      "Don't put a second meaning in the numeral slot. Minutes or layers, declared by the sheet type — never both.",
+      "Don't let a colour ground ship without also setting the type colour it requires."
+    ]
+  }
+}
