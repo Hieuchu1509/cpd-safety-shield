@@ -48,8 +48,11 @@ The escalation ladder itself, dramatized beat by beat. A neighboring product can
 
 - Product name. "CPD Safety Shield" is a working title, explicitly **not binding**; the real name is TBD.
 - The manufacturer / company behind the product is not established.
-- Where the cut production tooling lives instead — a separate internal surface within this project, or outside it entirely.
+- **The commercial primary CTA is blocked on the two decisions above.** Until a real name and maker exist there is nothing truthful to link to, so the final sheet's primary action is the "Xe của bạn có CPD không?" self-check, with sharing secondary. No placeholder ships to the public surface; when the name and maker land, the commercial action takes the primary slot and the self-check moves below it.
+- The public surface's `og:url`, `og:image` and `twitter:image` are relative and must become absolute once the production hostname is known — Zalo and several other scrapers reject relative paths, and Zalo is the confirmed primary channel.
 - Whether the script and scene copy themselves remain visible to the public, or only the finished film and explainer.
+
+**Resolved since this file was written:** the cut production tooling lives at `production.html`, an internal `noindex` surface reading `production-data.js`; that crew payload no longer ships in the public bundle.
 
 ## Brand Commitments
 

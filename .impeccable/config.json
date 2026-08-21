@@ -1,0 +1,20 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "createdAt": "2026-08-21T04:01:18.936Z",
+        "reason": "mask alpha in the perforation radial-gradient (style.css:131) and print ink (style.css:555); neither is a palette color"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff",
+        "createdAt": "2026-08-21T04:01:19.033Z",
+        "reason": "print media query paper ground (style.css:555); printing the newsprint cream would flood ink on every page"
+      }
+    ]
+  }
+}
